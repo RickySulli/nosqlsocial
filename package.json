@@ -1,0 +1,29 @@
+{
+  "name": "nosqlsocial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.16",
+    "nit": "^0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickySulli/nosqlsocial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RickySulli/nosqlsocial/issues"
+  },
+  "homepage": "https://github.com/RickySulli/nosqlsocial#readme"
+}
