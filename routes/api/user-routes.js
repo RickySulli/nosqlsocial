@@ -11,7 +11,7 @@ const {
 //get all users
 //post a  new user
 router
-    .route('/')
+    .route('/')//localhost:3001/api/users/
     .get(getAllUsers)
     .post(newUser)
     router
