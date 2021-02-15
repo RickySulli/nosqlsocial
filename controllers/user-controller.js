@@ -18,8 +18,9 @@ const userController = {
                 console.log(err);
                 res.status(400).json(err)
             });
-    },
-    getUserById({params}, res) {
+        },
+        //get a single user by _id and populated thought and friend data
+        getUserById({params}, res) {
         User.findOne({ _id: params.id})
         .populate({
             path: 'thoughts',
@@ -38,11 +39,13 @@ const userController = {
             res.status(400).json(err);
         });
     },
+    //post a  new user
     newUser({body}, res) {
         User.create(body)
         .then((dbUserData) => res.json(dbUserData))
         .catch((err) => res.status(400).json(err));
     },
+    // PUT to update a user byu its _id
     updateUser({ params, body }, res) {
         User.findOneAndUpdate({ _id: params.id }, body, { new: true })
           .then((dbUserData) => {
@@ -54,6 +57,7 @@ const userController = {
           })
           .catch((err) => res.status(400).json(err));
       },
+      //DELETE to remove user by it's _id  cascade and remove user's associated thoughts 
       deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id })
           .then((dbUserData) => {
@@ -65,6 +69,7 @@ const userController = {
           })
           .catch((err) => res.status(400).json(err));
       },
+      //POST  a new friend to a user's friend list
       addFriend({params}, res) {
           User.findOneAndUpdate(
               {_id: params.userId},
@@ -83,6 +88,8 @@ const userController = {
                 res.json(err);
             });
       },
+      
+//Delete to remove a friend from a user's friend list
       removeFriend(req,res) {
           User.findOneAndUpdate(
               {_id: params.friendId},
@@ -101,22 +108,19 @@ const userController = {
             });
       }
 };
-    
+
+module.exports = userController;
 
 
 
 
-//get a single user by _id and populated thought and friend data
 
-//post a  new user
 
-// PUT to update a user byu its _id
 
-//DELETE to remove user by it's _id  cascade and remove user's associated thoughts 
 
-//{/api/users/:userId/friends/:friendId}
 
-//POST  a new friend to a user's friend list
 
-//Delete to remove a friend from a user's friend list
+
+
+
 

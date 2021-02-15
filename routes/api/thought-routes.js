@@ -7,7 +7,7 @@ const {
     deleteThought,
     newReaction,
     deleteReaction
-}
+} = require('../../controllers/thought-controller')
 
 //(/api/thoughts)
 //GET all thoughts

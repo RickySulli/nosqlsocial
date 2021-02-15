@@ -21,7 +21,7 @@ const thoughtController = {
                 }
                 res.json(dbThoughtData)
             })
-            .catch((err) {
+            .catch((err) => {
                 console.log(err);
                 res.sendStatus(400)
             });
