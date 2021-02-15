@@ -12,8 +12,8 @@ const thoughtController = {
         })
     },
     // GET a single thought by it's _id
-    getThoughtById(req, res) {
-        Thought.findOne({_id: URLSearchParams.thoughtId})
+    getThoughtById({params}, res) {
+        Thought.findOne({_id: params.id})
             .then((dbThoughtData) =>{
                 if(!dbThoughtData) {
                     res.status(404).json({message: "No thought with this ID!!!"});
@@ -48,7 +48,7 @@ const thoughtController = {
             //PUT to update a thought by it's _id
      updateThought({params, body}, res) {
          Thought.findOneAndUpdate(
-             {_id: params.thoughtId},
+             {_id: params.id},
              {$set: body},
              {new: true, runValidators:true}
          )
@@ -62,7 +62,7 @@ const thoughtController = {
      },
      //DELETE to remove a thought by its _id
      deleteThought({params}, res) {
-         Thought.findOneAndDelete({_id:params.thoughtId})
+         Thought.findOneAndDelete({_id: params.id})
          .then((thoughtData) => {
             if(!thoughtData) {
                return res.status(404).json({message: "No thought has this ID!!!"})
@@ -76,7 +76,7 @@ const thoughtController = {
      newReaction({ params, body }, res) {
         console.log(params);
         Thought.findOneAndUpdate(
-            { _id: params.Id },
+            { _id: params.id },
             { $push: { reactions: body } },
             { new: true, runValidators: true }
         )
@@ -95,8 +95,8 @@ const thoughtController = {
 //DELETE  to pull and remove a reaction by the reaction's reactionId value
     deleteReaction({params}, res) {
         Thought.findOneAndUpdate(
-            {_id: params.Id},
-            {$pull: {reactions: {reactionId: params.reactionId}}},
+            {_id: params.id},
+            {$pull:  {reactionId: params.reactionId}},
             {new:true, runValidators:true}
         )
         .then(dbThoughtData => {
