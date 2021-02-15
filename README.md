@@ -1,4 +1,41 @@
-# nosqlsocial
+### nosql social-network
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+# Description
+#### A social media startup backend with a NoSQL database
+
+## Table of Contents
+* [Demo](#DEMO)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributing](#Contribution)
+* [Tests](#Tests)
+* [Questions](#Contact)
+## DEMO
+quick walkthru on insomnia showing routes working.
+https://drive.google.com/file/d/17atgD1id1aj1uCTiJGUuzC0MlOGlQtv2/view
+## Installation
+#### Clone, run npm install
+
+## Usage
+#### This is to demonstrate my knowledge at this point.
+
+## License
+#### MIT
+
+## Contribution
+#### add a front end
+
+### Tests
+##### Test with insomnia and node.js
+
+# Contact 
+### Github: [RickySulli](http://github.com/RickySulli)
+### Email: dostuffforme@gmail.com
+  
 
 ## User Story: 
 ##### AS A social media startup
@@ -16,3 +53,4 @@
 * THEN I am able to successfully create, update, and delete users and thoughts in my database
 * WHEN I test API POST and DELETE routes in Insomnia Core
 * THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+
